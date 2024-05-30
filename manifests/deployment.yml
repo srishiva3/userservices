@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: srishivauserservices 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: srishivauserservices
+  template:
+    metadata:
+      labels:
+        app: srishivauserservices 
+    spec:
+      containers:
+        - name: srishivauserservices 
+          image: enweof.azurecr.io/srishivauserservices
+          ports:
+          - containerPort: 8082

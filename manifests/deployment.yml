@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: userservicesrevhire 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: userservicesrevhire
+  template:
+    metadata:
+      labels:
+        app: userservicesrevhire 
+    spec:
+      containers:
+        - name: userservicesrevhire 
+          image: mycontainerforaks.azurecr.io/userservicesrevhire
+          ports:
+          - containerPort: 8082
